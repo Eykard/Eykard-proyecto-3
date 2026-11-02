@@ -1,0 +1,166 @@
+/* ==========================================
+   VARIABLES CSS PERSONALIZADAS
+   ========================================== */
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #18BC9C;
+    --accent-color: #F39C12;
+    --bg-light: #F8F9FA;
+    --transition-speed: 0.3s ease;
+}
+
+/* ==========================================
+   ESTILOS GENERALES Y TIPOGRAFÍA
+   ========================================== */
+body {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    padding-top: 56px; /* Espacio por menú fijo */
+    scroll-behavior: smooth;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: var(--transition-speed);
+}
+
+.btn-primary:hover {
+    background-color: #1a252f;
+    border-color: #1a252f;
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    transition: var(--transition-speed);
+}
+
+.btn-accent:hover {
+    background-color: #d68910;
+    border-color: #d68910;
+}
+
+/* ==========================================
+   SECCIÓN HERO Y BANNER
+   ========================================== */
+.hero-section {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://tse1.mm.bing.net/th/id/OIP.BeO1Xyw4weSOHsgzyuO36QHaE8?r=0&pid=Api&h=220&P=0');
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh;
+}
+
+.banner-img {
+    height: 350px;
+    object-fit: cover;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* ==========================================
+   TARJETAS Y EFECTOS HOVER
+   ========================================== */
+.service-card, .team-card, .contact-card {
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    border-radius: 12px;
+}
+
+.service-card:hover, .team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.service-img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.team-photo {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border: 4px solid var(--secondary-color);
+}
+
+/* Efecto hover especial en tarjeta de contacto */
+.contact-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(24, 188, 156, 0.3) !important;
+    border: 2px solid var(--secondary-color) !important;
+}
+
+/* ==========================================
+   CARRUSEL DE CLIENTES Y BORDES ARCOÍRIS
+   ========================================== */
+.client-avatar {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color);
+}
+
+/* Animación de latido del corazón para avatares */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.12); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.08); }
+    60% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.heartbeat {
+    animation: heartbeat 2s infinite ease-in-out;
+}
+
+/* Bordes animados con colores arcoíris */
+@keyframes rainbowBorder {
+    0% { border-color: #FF5733; box-shadow: 0 0 10px rgba(255, 87, 51, 0.4); }
+    20% { border-color: #FFC300; box-shadow: 0 0 10px rgba(255, 195, 0, 0.4); }
+    40% { border-color: #DAF7A6; box-shadow: 0 0 10px rgba(218, 247, 166, 0.4); }
+    60% { border-color: #33FF57; box-shadow: 0 0 10px rgba(51, 255, 87, 0.4); }
+    80% { border-color: #33FFF3; box-shadow: 0 0 10px rgba(51, 255, 243, 0.4); }
+    100% { border-color: #900C3F; box-shadow: 0 0 10px rgba(144, 12, 63, 0.4); }
+}
+
+.rainbow-card {
+    border: 3px solid #FF5733;
+    animation: rainbowBorder 6s infinite alternate;
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+
+/* ==========================================
+   FOOTER Y REDES SOCIALES
+   ========================================== */
+.social-icons a {
+    transition: color var(--transition-speed), transform var(--transition-speed);
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color) !important;
+    transform: scale(1.2);
+}
+
+/* ==========================================
+   MEDIA QUERIES PARA RESPONSIVIDAD
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .banner-img {
+        height: 200px;
+    }
+}
